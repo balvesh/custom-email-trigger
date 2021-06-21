@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="learning" translate="label" sortOrder="100">
+            <label>VT Netzwelt</label>
+        </tab>
+        <section id="triggercustomemail" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Send Custom Email</label>
+            <tab>learning</tab>
+            <resource>Learning_TriggerCustomEmail::index_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Custom Email Configuration</label>
+                <field id="email" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enter Email Address</label>
+                    <comment>Enter email and select template </comment>
+                </field>
+                <field id="template_identifier" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Select Template</label>
+                    <source_model>Learning\TriggerCustomEmail\Model\Config\Source\Email\Template</source_model>
+                </field>
+                <field id="sent" translate="label" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label></label>
+                    <button_label>Send</button_label>
+                    <button_url>adminhtml/smtp/test</button_url>
+                    <frontend_model>Learning\TriggerCustomEmail\Block\Adminhtml\System\Config\Button</frontend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

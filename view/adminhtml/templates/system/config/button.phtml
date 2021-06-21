@@ -1,0 +1,14 @@
+<div class="actions actions-test-email">
+    <button class="actions-test-email" type="button" id="<?= $block->getHtmlId() ?>">
+        <span><?= $block->escapeHtml($block->getButtonLabel()) ?></span>
+    </button>
+</div>
+<script type="text/x-magento-init">
+    {
+        "#triggercustomemail_general_email": {
+            "Learning/emailRequest": {
+                "ajaxUrl": "<?= $block->getButtonUrl() ?>"
+            }
+        }
+    }
+</script>
